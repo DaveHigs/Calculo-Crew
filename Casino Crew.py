@@ -17,10 +17,6 @@ opcionHacker = IntVar()
 
 opcionBotin = IntVar()
 
-
-
-
-
 tajadaTotal = 0
 
 costoCrew = 0
@@ -29,10 +25,16 @@ def calculo_tajada():
 
     '''
     Calcula el valor de la tajada basado
-    en el costo porcentual de la crew.
+    en el costo porcentual de la crew y el
+    valor del contenido de la boveda.
 
     '''
     def tajada():
+
+        '''
+        Genera el valor de la tajada de acuerdo
+        al contenido de la boveda.
+        '''
 
         global opcionBotin
 
@@ -53,6 +55,12 @@ def calculo_tajada():
         return tajadaTotal
 
     def calculoCrew():
+
+        '''
+        Calcula el costo porcentual de contratar a tal
+        a la crew para el golpe, el grupo se compone de
+        un Pistolero, un Conductor, y un Hacker.
+        '''
 
         global opcionConductor
         global opcionPistolero
@@ -80,10 +88,8 @@ def calculo_tajada():
     return messagebox.showinfo('Calcular tajada', 'La tajada total es: '+ str(valor2))
 
 
-
-
-
 #---------Frames---------
+
 Frame0 = Frame(root)
 Frame0.pack()
 
@@ -97,7 +103,6 @@ Frame3 = Frame(Frame0)
 Frame3.pack(side=LEFT)
 
 Frame4 = Frame(root)
-#Frame4.grid(row=7, column=0, rowspan=1, columnspan=4)
 Frame4.pack(side=BOTTOM)
 
 #--------Pistoleros--------
@@ -121,7 +126,6 @@ BotonPistolero5.grid(row=5, column=0)
 LabelConductor = Label(Frame2, text='CONDUCTOR', pady=10)
 LabelConductor.grid(row=0, column=0)
 
-
 BotonConductor1 = Radiobutton(Frame2, text='Karim Denz (5%)', variable=opcionConductor, value=5)
 BotonConductor1.grid(row=1, column=0)
 BotonConductor2 = Radiobutton(Frame2, text='Zach Nelson (6%)', variable=opcionConductor, value=6)
@@ -133,12 +137,10 @@ BotonConductor4.grid(row=4, column=0)
 BotonConductor5 = Radiobutton(Frame2, text='Chester Mckoy (10%)', variable=opcionConductor, value=10)
 BotonConductor5.grid(row=5, column=0)
 
-
 #----------Hackers-----------
 
 LabelHacker = Label(Frame3, text='HACKER', pady=10)
 LabelHacker.grid(row=0, column=0)
-
 
 BotonHacker1 = Radiobutton(Frame3, text='Rickie Lukens (3%)', variable=opcionHacker, value=3)
 BotonHacker1.grid(row=1, column=0)
@@ -171,9 +173,6 @@ BotonDiamantes.grid(row=1, column=3)
 
 BotonResultado = Button(Frame4, text='Calcular tajada', padx=15, pady=5, command=calculo_tajada)
 BotonResultado.grid(row=3, columnspan=4)
-
-
-
 
 
 root.mainloop()

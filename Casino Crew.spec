@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Casino Crew.py'],
-             pathex=['D:\\David\\Trading & Coding\\Coding\\Calculo Casino gta'],
+             pathex=['C:\\Users\\David\\Documents\\GitHub\\Calculo-Crew'],
              binaries=[],
              datas=[],
              hiddenimports=[],
